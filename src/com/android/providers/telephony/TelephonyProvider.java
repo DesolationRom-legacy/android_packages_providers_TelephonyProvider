@@ -61,7 +61,7 @@ public class TelephonyProvider extends ContentProvider
     private static final boolean DBG = true;
     private static final boolean VDBG = false;
 
-    private static final int DATABASE_VERSION = 12 << 16;
+    private static final int DATABASE_VERSION = 13 << 16;
     private static final int URL_UNKNOWN = 0;
     private static final int URL_TELEPHONY = 1;
     private static final int URL_CURRENT = 2;
@@ -197,7 +197,8 @@ public class TelephonyProvider extends ContentProvider
                     + SubscriptionManager.DISPLAY_NUMBER_FORMAT + " INTEGER NOT NULL DEFAULT " + SubscriptionManager.DISLPAY_NUMBER_DEFAULT + ","
                     + SubscriptionManager.DATA_ROAMING + " INTEGER DEFAULT " + SubscriptionManager.DATA_ROAMING_DEFAULT + ","
                     + SubscriptionManager.MCC + " INTEGER DEFAULT 0,"
-                    + SubscriptionManager.MNC + " INTEGER DEFAULT 0"
+                    + SubscriptionManager.MNC + " INTEGER DEFAULT 0" + ","
+                    + SubscriptionManager.SUB_STATE + " INTEGER DEFAULT " + SubscriptionManager.ACTIVE
                     + ");");
             if (DBG) log("dbh.createSimInfoTable:-");
         }
